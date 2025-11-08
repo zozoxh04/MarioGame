@@ -47,31 +47,33 @@ easy installation of many tools and packages commonly used on Linux.
 https://docs.brew.sh/Installation
 
 Use homebrew to install sdl2:
-
+```
 brew install sdl2
 
 brew install sdl2_image
 
 brew install sdl2_mixer
-
+```
 3. Replace abs function with fabs:
 
 Under project/src/ edit the following lines in "platform.c":
-
+```
 LINE 50: if (abs(self->x - self->sx) < PLATFORM_SPEED && abs(self->y - self->sy) < PLATFORM_SPEED)
 
 CHANGE TO: if (fabs(self->x - self->ex) < PLATFORM_SPEED && fabs(self->y - self->ey) < PLATFORM_SPEED)
-
+```
+```
 LINE 58: if (abs(self->x - self->ex) < PLATFORM_SPEED && abs(self->y - self->ey) < PLATFORM_SPEED)
 
 CHANGE TO: if (fabs(self->x - self->ex) < PLATFORM_SPEED && fabs(self->y - self->ey) < PLATFORM_SPEED)
-
+```
 4. Create build directory, compile and run game
 
 in /project/:
-
+```
 mkdir build
 
 ./compile.sh
 
 ./pp06
+```
